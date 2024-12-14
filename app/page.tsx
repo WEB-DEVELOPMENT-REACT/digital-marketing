@@ -117,7 +117,7 @@ export default function Home() {
         <div className="flex items-center gap-x-4">
           <a href="tel:519400200" className="hidden lg:flex">
             <button className="px-4 py-2 rounded-md flex items-center gap-x-3">
-              (519)-400-200
+            +34 673685542
             </button>
           </a>
 
@@ -407,14 +407,14 @@ export default function Home() {
               alt="image"
             />{" "}
           </h1>
-          <p className="text-left  text-xl  text-gray-500">519-200-5000</p>
+          <p className="text-left  text-xl  text-gray-500">+34 673685542</p>
           <p className="text-left  text-xl  text-gray-500">
-            admin@birdsoftware.ca
+            elduverxdev@gmail.com
           </p>
         </div>
 
         <div className="flex md:justify-center gap-x-4 mt-10">
-          © 2025 Bird. All Rights Reserved.
+          © 2024 Bird. All Rights Reserved.
           <Link href="/" className="text-blue-500">
             Privacy Policy
           </Link>

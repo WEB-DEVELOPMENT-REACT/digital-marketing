@@ -14,9 +14,9 @@ const Footer = () => {
             alt="image"
           />{" "}
         </h1>
-        <p className="text-left  text-xl  text-gray-500">519-319-1562</p>
+        <p className="text-left  text-xl  text-gray-500">+34 673685542</p>
         <p className="text-left  text-xl  text-gray-500">
-          admin@birdsoftware.ca
+          elduverxdev@gmail.com
         </p>
       </div>
 
