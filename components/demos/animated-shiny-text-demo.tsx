@@ -26,15 +26,15 @@ export function AnimatedShinyTextDemo() {
           gap-x-6">
           ⭐{" "}   ⭐{" "}   ⭐{" "}   ⭐{" "}   ⭐
           <div className="flex items-center space-x-2 py-2 md:py-0">
+            <a href="https://www.google.com/search?q=bird+marketing&rlz=1C5CHFA_enES1101ES1101&oq=bird&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTISCAEQLhhDGK8BGMcBGIAEGIoFMg4IAhBFGCcYOxiABBiKBTIGCAMQRRg7MgoIBBAuGLEDGIAEMgYIBRBFGD0yBggGEEUYPTIGCAcQRRg90gEINDE4MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8" className="hidden lg:flex">
           <FcGoogle className="h-6 w-6 " />
             <span className="text-gray-600 hover:underline cursor-pointer ">
-            <a href="https://www.google.com/search?q=bird+marketing&rlz=1C5CHFA_enES1101ES1101&oq=bird&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTISCAEQLhhDGK8BGMcBGIAEGIoFMg4IAhBFGCcYOxiABBiKBTIGCAMQRRg7MgoIBBAuGLEDGIAEMgYIBRBFGD0yBggGEEUYPTIGCAcQRRg90gEINDE4MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8" className="hidden lg:flex">
             <button className="px-4 py-2 rounded-md flex items-center gap-x-3">
           
               4.9 stars 200+ google reviews
             </button>
-          </a>
             </span>
+          </a>
           </div>
           </div>
         </AnimatedShinyText>
