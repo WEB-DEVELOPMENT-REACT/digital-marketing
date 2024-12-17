@@ -13,7 +13,7 @@ type PricingSwitchProps = {
 }
 
 type PricingCardProps = {
-  isYearly?: boolean
+  useisYearly?: boolean
   title: string
   monthlyPrice?: number
   yearlyPrice?: number
@@ -53,7 +53,7 @@ const PricingSwitch = ({ onSwitch }: PricingSwitchProps) => (
   </Tabs>
 )
 
-const PricingCard = ({ isYearly, title, monthlyPrice, yearlyPrice, description, features, actionLabel, popular, exclusive }: PricingCardProps) => (
+const PricingCard = ({ useisYearly, title, monthlyPrice, yearlyPrice, description, features, actionLabel, popular, exclusive }: PricingCardProps) => (
   <Card
     className={cn(`w-72 flex flex-col justify-between py-1 ${popular ? "border-rose-400" : "border-zinc-700"} mx-auto sm:mx-0`, {
         "animate-background-shine bg-white dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] transition-colors":
@@ -61,7 +61,7 @@ const PricingCard = ({ isYearly, title, monthlyPrice, yearlyPrice, description, 
     })}>
     <div>
       <CardHeader className="pb-8 pt-4">
-        {isYearly && yearlyPrice && monthlyPrice ? (
+        {useisYearly && yearlyPrice && monthlyPrice ? (
             <div className="flex justify-between">
             <CardTitle className="text-zinc-700 dark:text-zinc-300 text-lg">{title}</CardTitle>
             <div
@@ -75,8 +75,8 @@ const PricingCard = ({ isYearly, title, monthlyPrice, yearlyPrice, description, 
             <CardTitle className="text-zinc-700 dark:text-zinc-300 text-lg">{title}</CardTitle>
         )}
         <div className="flex gap-0.5">
-          <h3 className="text-3xl font-bold">{yearlyPrice && isYearly ? "$" + yearlyPrice : monthlyPrice ? "$" + monthlyPrice : "Custom"}</h3>
-          <span className="flex flex-col justify-end text-sm mb-1">{yearlyPrice && isYearly ? "/year" : monthlyPrice ? "/month" : null}</span>
+          <h3 className="text-3xl font-bold">{yearlyPrice && useisYearly ? "$" + yearlyPrice : monthlyPrice ? "$" + monthlyPrice : "Custom"}</h3>
+          <span className="flex flex-col justify-end text-sm mb-1">{yearlyPrice && useisYearly ? "/year" : monthlyPrice ? "/month" : null}</span>
         </div>
         <CardDescription className="pt-1.5 h-12">{description}</CardDescription>
       </CardHeader>
@@ -103,7 +103,7 @@ const CheckItem = ({ text }: { text: string }) => (
 )
 
 export default function Page() {
-  const [isYearly, setIsYearly] = useState(false)
+  const [useisYearly, setIsYearly] = useState(false)
   const togglePricingPeriod = (value: string) => setIsYearly(parseInt(value) === 1)
 
   const plans = [
@@ -143,7 +143,7 @@ export default function Page() {
       <PricingSwitch onSwitch={togglePricingPeriod} />
       <section className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-8 mt-8">
         {plans.map((plan) => {
-          return <PricingCard key={plan.title} {...plan} isYearly={isYearly} />
+          return <PricingCard key={plan.title} {...plan} useisYearly={useisYearly} />
         })}
       </section>
     </div>
