@@ -1,3 +1,4 @@
+"use client"
 import { AnimatedShinyTextDemo } from "@/components/demos/animated-shiny-text-demo";
 import { CoverDemo } from "@/components/demos/cover-demo";
 import BoxReveal from "@/components/magicui/box-reveal";
