@@ -1,6 +1,5 @@
 "use client"
 import { BlurFadeDemo } from "@/components/demos/blur-fade-demo";
-import { useState } from "react";
 import Footer from "@/components/footer";
 import WordFadeIn from "@/components/magicui/word-fade-in";
 import ShowcaseNavbar from "@/components/showcase-navbar";

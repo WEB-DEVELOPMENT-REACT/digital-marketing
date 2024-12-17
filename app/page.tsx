@@ -6,7 +6,6 @@ import { ScrollBasedVelocityDemo } from "@/components/demos/scroll-based-velocit
 import { WordPullUpDemo } from "@/components/demos/word-pull-up-demo";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Link as ScrollLink, Element } from "react-scroll";
 import { IconStarFilled } from "@tabler/icons-react";
 import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo";
@@ -106,9 +105,9 @@ export default function Home() {
       </section>
 
       <Element name="process">
-        <main className="md:px-0 mx-6 md:mx-auto">
-        <h1 className="text-3xl md:text-5xl md:text-center font-medium flex items-center gap-x-2 mx-auto justify-center">
-        Nuestro{" "}
+        <main className="md:px-0 mx-3 md:mx-auto">
+        <h1 className="text-2xl md:text-5xl md:text-center font-medium flex items-center gap-x-2 mx-auto justify-center">
+        Nuestro {" "}
             <span className="text-blue-500 flex gap-x-1 items-center">
               {" "}
               <Image
@@ -118,7 +117,7 @@ export default function Home() {
                 className="w-6"
                 alt="image"
               />
-              Creativo
+               Creativo 
               <Image
                 src={"/icons/star.svg"}
                 width={10000}
@@ -127,7 +126,7 @@ export default function Home() {
                 alt="image"
               />
             </span>{" "}
-            Proceso
+             Proceso 
           </h1>
 
           <p className="text-center 
