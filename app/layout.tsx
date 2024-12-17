@@ -6,8 +6,8 @@ import { Analytics } from "@vercel/analytics/react";
 const font = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bird | Design & Development Studio",
-  description: "Grow your business with Bird, a design & development studio.",
+  title: "Bird | Marketing & Development Studio",
+  description: "Haz crecer tu negocio con Bird, especialistas en marketing y desarrollo de software.",
   openGraph: {
     images: [
       {

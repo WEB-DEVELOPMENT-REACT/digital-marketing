@@ -27,28 +27,28 @@ const Meeting = () => {
       <ShowcaseNavbar />
       <div className="md:px-0 px-6 xl:w-4/5 2xl:w-[68%] justify-between md:mt-14 md:flex mx-auto  ">
         <div className="md:w-2/5">
-          <h1 className="text-4xl font-semibold pt-10   ">Let&apos;s Meet</h1>
+          <h1 className="text-4xl font-semibold pt-10   ">Conozcámonos</h1>
           <p className="text-lg text-gray-500 py-4">
-            We are always excited to meet new people and discuss new projects.
-            Please feel free to book a meeting with us.
+          Siempre nos entusiasma conocer nuevas personas y hablar sobre nuevos proyectos.
+           No dude en concertar una reunión con nosotros.
           </p>
 
           {[
                 {
-                  title: "Development + Design",
+                  title: "Desarrollo y Diseño",
                   description:
-                    "Turn your ideas into reality with our development and design services.",
+                    "Convierte tus ideas en realidad con nuestros servicios de desarrollo y diseño.",
                 },
 
                 {
-                  title: "Free Consultation",
+                  title: "Consulta Libre",
                   description:
-                    "Get expert advice on how to improve your business and increase your online presence.",
+                    "Obtenga asesoramiento de expertos sobre cómo mejorar su negocio y aumentar su presencia en línea.",
                 },
                 {
-                  title: "Technical Support",
+                  title: "Soport Técnico",
                   description:
-                    "Get technical support for your website or application.",
+                    "Obtenga soporte técnico para su sitio web o aplicación.",
                 },
               ].map((item, index) => (
                 <motion.div

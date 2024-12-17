@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SecurityTooltip from "./demos/box-privact";
 
 const Footer = () => {
   return (
@@ -22,9 +23,9 @@ const Footer = () => {
 
       <div className="flex md:justify-center gap-x-4 mt-10">
         © 2024 Bird. All Rights Reserved.
-        <Link href="/" className="text-blue-500">
-          Privacy Policy
-        </Link>
+        <SecurityTooltip/>
+       
+     
       </div>
     </footer>
   );

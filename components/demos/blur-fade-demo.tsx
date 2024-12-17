@@ -12,20 +12,20 @@ const works = [
   {
     background: "bg-gray-200",
     imageUrl: "/images/car.png",
-    title: "Atlas Massage",
+    title: "Renta un Coche",
     link: "https://rentacar-lake.vercel.app/",
   },
   {
     background: "bg-gray-200",
     imageUrl: "/images/iphone.png",
-    title: "Canadian Security Solutions",
+    title: "Iphone design 3D Model",
     link: "https://iphone-psi-two.vercel.app/",
   },
   {
     background: "bg-gray-200",
     imageUrl: "/images/business.webp",
-    title: "Flight 9",
-    link: "https://www.flight9.art",
+    title: "Rubish Brother Junk Removal",
+    link: "https://www.rubbishbrothers.com/",
   },
 
 

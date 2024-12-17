@@ -6,64 +6,59 @@ import Image from "next/image";
 const features = [
   {
     icon: "/icons/fast.svg",
-    title: "Fast Delivery",
-    description:
-      "1-2 weeks delivery for most projects. Call us for more information.",
+    title: "Entrega Rápida",
+    description: "Entrega en 1-2 semanas para la mayoría de los proyectos. Llámanos para más información.",
   },
   {
     icon: "/icons/design.svg",
-    title: "Design & Development",
-    description:
-      "We design and develop your website with the latest technologies and trends.",
+    title: "Diseño y Desarrollo",
+    description: "Diseñamos y desarrollamos tu sitio web con las últimas tecnologías y tendencias.",
   },
   {
     icon: "/icons/scalable.svg",
-    title: "Scalability + Maintenance ",
-    description: "We offer maintenance and scalability for all websites.",
+    title: "Escalabilidad + Mantenimiento",
+    description: "Ofrecemos mantenimiento y escalabilidad para todos los sitios web.",
   },
   {
     icon: "/icons/team.svg",
-    title: "Team of Experts",
-    description: "A team of experts ready to help you, at all times.",
+    title: "Equipo de Expertos",
+    description: "Un equipo de expertos listo para ayudarte en todo momento.",
   },
   {
     icon: "/icons/safe.svg",
-    title: "Secure Building",
-    description:
-      "Safe and secure building practices. To ensure your data is safe.",
+    title: "Construcción Segura",
+    description: "Prácticas de construcción seguras para garantizar que tus datos estén protegidos.",
   },
   {
     icon: "/icons/analytics.svg",
-    title: "Analytics Tracking",
-    description: "Track your progress with our built in analytics",
+    title: "Seguimiento de Analíticas",
+    description: "Haz un seguimiento de tu progreso con nuestras analíticas integradas.",
   },
-
   {
     icon: "/icons/flexible.svg",
-    title: "Dynamic Websites",
-    description: "We build dynamic solutions that are easy to manage.",
+    title: "Sitios Web Dinámicos",
+    description: "Construimos soluciones dinámicas que son fáciles de gestionar.",
   },
   {
     icon: "/icons/support.svg",
-    title: "24/7 Support",
-    description:
-      "We offer 24/7 support for all our clients. Call us for more information.",
+    title: "Soporte 24/7",
+    description: "Ofrecemos soporte 24/7 para todos nuestros clientes. Llámanos para más información.",
   },
   {
     icon: "/icons/money.svg",
-    title: "Affordable Pricing",
-    description: "Affordable pricing for all our clients.",
+    title: "Precios Asequibles",
+    description: "Precios asequibles para todos nuestros clientes.",
   },
+  
 ];
 
 export function ShootingStarsAndStarsBackgroundDemo() {
   return (
     <div className="mt-20 py-10 md:py-20 rounded-[40px] bg-neutral-900 flex flex-col items-center justify-center relative w-full px-6 md:px-0">
       <h2 className="relative flex-col  z-10 text-3xl md:text-5xl md:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 via-white to-white flex items-center gap-2 ">
-        Our guarantees to you.
+        Nuestras Garantias para ti.
         <p className="md:text-center   mx-auto  text-xl md:text-2xl text-gray-200">
-          We ensure the highest quality of work, with the fastest delivery
-          times.
+        Garantizamos la más alta calidad de trabajo, con los tiempos de entrega más rápidos.
         </p>
       </h2>
 

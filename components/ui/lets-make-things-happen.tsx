@@ -10,12 +10,12 @@ function LetsMakeThingsHappenSection() {
     bg-accent rounded-[45px] p-[50px] md:p-[60px] relative">
       <div className="md:pr-[22rem]">
         <p className="text-3xl font-medium">
-          Let&apos;s make things happen
+          Hagamos Esto Una Realidad
         </p>
 
         <p className="my-10 text-xl">
-          Contact us today to learn more about how our digital marketing
-          services can help your business grow and succeed online.
+        Contáctenos hoy para obtener más información sobre cómo nuestros servicios de marketing digital
+        pueden ayudar a que su negocio crezca y tenga éxito en línea.
         </p>
 
         <Link
@@ -36,7 +36,7 @@ function LetsMakeThingsHappenSection() {
        duration-200 
        hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] "
         >
-          Book a Call
+         Agendar Cita
         </Link>
       </div>
       <div className="absolute -top-8 right-8 hidden md:block">
