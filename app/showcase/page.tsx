@@ -3,7 +3,9 @@ import { BlurFadeDemo } from "@/components/demos/blur-fade-demo";
 import Footer from "@/components/footer";
 import WordFadeIn from "@/components/magicui/word-fade-in";
 import ShowcaseNavbar from "@/components/showcase-navbar";
+import { FloatingNav } from "@/components/ui/FloatingNavBar";
 import LetsMakeThingsHappenSection from "@/components/ui/lets-make-things-happen";
+import { navItems } from "@/data";
 
 const Showcase = () => {
   return (
@@ -15,7 +17,7 @@ const Showcase = () => {
   bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
    bg-[size:14px_24px]"
     >
-      <ShowcaseNavbar />
+     <FloatingNav navItems={navItems}/>
       <section className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto">
         <div className="flex items-center justify-center relative">
           <WordFadeIn

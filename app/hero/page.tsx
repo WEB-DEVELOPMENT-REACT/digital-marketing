@@ -6,6 +6,8 @@ import NumberTicker from "@/components/magicui/number-ticker";
 import { InfiniteMovingLogos } from "@/components/ui/infinite-moving-logos";
 import { PiCheckBold } from "react-icons/pi";
 import Link from "next/link";
+import { FloatingNav } from "@/components/ui/FloatingNavBar";
+import { navItems } from "@/data";
 
 
 
@@ -14,7 +16,6 @@ const Hero = () => {
 <main className="md:pb-10">
 <div className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto mt-14">
   <AnimatedShinyTextDemo />
-
   <h1>
     <CoverDemo />
   </h1>

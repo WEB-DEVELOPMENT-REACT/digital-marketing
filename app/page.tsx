@@ -14,6 +14,8 @@ import ShowcaseNavbar from "@/components/showcase-navbar";
 import Hero from "./hero/page";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/footer";
+import { FloatingNav } from "@/components/ui/FloatingNavBar";
+import { navItems } from "@/data";
 
 
 const services = [
@@ -65,8 +67,7 @@ export default function Home() {
   bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
    bg-[size:14px_24px]"
     >
-      
-      <Navbar/>
+      <FloatingNav navItems={navItems}/>
 
      <Hero/>
 

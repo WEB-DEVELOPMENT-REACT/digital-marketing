@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 import ShowcaseNavbar from "@/components/showcase-navbar"
+import { FloatingNav } from "@/components/ui/FloatingNavBar"
+import { navItems } from "@/data"
 
 type PricingSwitchProps = {
   onSwitch: (value: string) => void
@@ -22,6 +24,7 @@ type PricingCardProps = {
   actionLabel: string
   popular?: boolean
   exclusive?: boolean
+  link:string
 }
 
 const PricingHeader = ({ title, subtitle }: { title: string; subtitle: string }) => (
@@ -32,7 +35,7 @@ const PricingHeader = ({ title, subtitle }: { title: string; subtitle: string })
   bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
    bg-[size:14px_24px]">
    <section className="text-center">
-      <ShowcaseNavbar/>
+      <FloatingNav navItems={navItems}/>
     <h2 className="text-3xl font-bold">{title}</h2>
     <p className="text-xl pt-1">{subtitle}</p>
     <br />
@@ -53,7 +56,7 @@ const PricingSwitch = ({ onSwitch }: PricingSwitchProps) => (
   </Tabs>
 )
 
-const PricingCard = ({ useisYearly, title, monthlyPrice, yearlyPrice, description, features, actionLabel, popular, exclusive }: PricingCardProps) => (
+const PricingCard = ({ useisYearly, title, monthlyPrice, yearlyPrice, description, features, actionLabel, popular, exclusive ,link}: PricingCardProps) => (
   <Card
     className={cn(`w-72 flex flex-col justify-between py-1 ${popular ? "border-rose-400" : "border-zinc-700"} mx-auto sm:mx-0`, {
         "animate-background-shine bg-white dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] transition-colors":
@@ -114,6 +117,7 @@ export default function Page() {
       description: "Lo esencial para empezar",
       features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
       actionLabel: "Get Started",
+      link: ""
     },
     {
       title: "Pro",
@@ -123,6 +127,7 @@ export default function Page() {
       features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
       actionLabel: "Get Started",
       popular: true,
+      link: ""
     },
     {
       title: "Empresa",
@@ -131,6 +136,7 @@ export default function Page() {
       features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
       actionLabel: "Contact Sales",
       exclusive: true,
+      link:""
     },
   ]
   return (
