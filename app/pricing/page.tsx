@@ -36,7 +36,7 @@ const PricingHeader = ({ title, subtitle }: { title: string; subtitle: string })
   bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
    bg-[size:14px_24px]">
    <section className="text-center">
-     <div className="p-4">
+     <div className="py-4">
 
       <FloatingNav navItems={navItems}/>
      </div>
