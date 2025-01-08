@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import ShowcaseNavbar from "@/components/showcase-navbar"
 import { FloatingNav } from "@/components/ui/FloatingNavBar"
 import { navItems } from "@/data"
+import Footer from "@/components/footer"
 
 type PricingSwitchProps = {
   onSwitch: (value: string) => void
@@ -35,13 +36,18 @@ const PricingHeader = ({ title, subtitle }: { title: string; subtitle: string })
   bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
    bg-[size:14px_24px]">
    <section className="text-center">
+     <div className="p-4">
+
       <FloatingNav navItems={navItems}/>
+     </div>
+
     <h2 className="text-3xl font-bold">{title}</h2>
     <p className="text-xl pt-1">{subtitle}</p>
     <br />
   </section>
     </div>
 )
+
 
 const PricingSwitch = ({ onSwitch }: PricingSwitchProps) => (
   <Tabs defaultValue="0" className="w-40 mx-auto" onValueChange={onSwitch}>
@@ -144,7 +150,7 @@ export default function Page() {
  inset-0 
  -z-10 h-full w-full bg-[#fafafa]
   bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
-   bg-[size:14px_24px] py-8">
+   bg-[size:14px_24px]  py-8">
       <PricingHeader title="Precio de los Planes" subtitle="Escoge el mejor plan para ti" />
       <PricingSwitch onSwitch={togglePricingPeriod} />
       <section className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-8 mt-8">
@@ -152,6 +158,9 @@ export default function Page() {
           return <PricingCard key={plan.title} {...plan} useisYearly={useisYearly} />
         })}
       </section>
+      <div className="h-10">
+
+      </div>
     </div>
   )
 }
