@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/  # Bloquear rutas privadas
+Allow: /           # Permitir todo lo demás
+Sitemap: https://birdmarketing.es/sitemap.xml
