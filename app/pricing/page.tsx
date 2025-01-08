@@ -117,30 +117,30 @@ export default function Page() {
 
   const plans = [
     {
-      title: "Basic",
-      monthlyPrice: 59,
-      yearlyPrice: 608,
+      title: "Film and Go",
+      monthlyPrice: 150,
+      yearlyPrice: 1500,
       description: "Lo esencial para empezar",
-      features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
-      actionLabel: "Get Started",
+      features: ["8 Videos","Gestion de Redes","3-5 horas de grabación", "Bot de Interacción con clientes"],
+      actionLabel: "Adquirir",
       link: ""
     },
     {
-      title: "Pro",
-      monthlyPrice: 299,
-      yearlyPrice: 1660,
+      title: "Entra en Acción",
+      monthlyPrice: 300,
+      yearlyPrice: 3000,
       description: "Perfecto para propietarios de pequeños y medianos negocios",
       features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
-      actionLabel: "Get Started",
+      actionLabel: "Adquirir",
       popular: true,
       link: ""
     },
     {
       title: "Empresa",
-      price: "Custom",
+      price: "Personalizado",
       description: "Dedicado al apoyo y la infraestructura que encaje a su necesidad.",
-      features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
-      actionLabel: "Contact Sales",
+      features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles","Despliegue AppStore/PlayStore", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
+      actionLabel: "Contacto de Empresa",
       exclusive: true,
       link:""
     },

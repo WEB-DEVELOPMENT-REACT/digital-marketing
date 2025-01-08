@@ -75,13 +75,13 @@ hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4p
     <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
       <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
         <PiCheckBold className="text-xl text-blue-500" />
-        Design
+        Videos
       </p>
     </BoxReveal>
     <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
       <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
         <PiCheckBold className="text-xl text-blue-500" />
-        Development
+        Aplicaciones
       </p>
     </BoxReveal>
     <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
@@ -93,7 +93,7 @@ hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4p
     <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
       <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
         <PiCheckBold className="text-xl text-blue-500" />
-        Strategy
+        Estrategia
       </p>
     </BoxReveal>
   </div>
@@ -109,7 +109,7 @@ hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4p
           <h1 className="text-blue-500 text-3xl md:text-5xl">
             <NumberTicker value={670} /> +
             <p className="text-gray-500 text-sm md:text-md">
-              Clientes 
+              Videos Completados
             </p>
           </h1>
         </div>
@@ -118,9 +118,9 @@ hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4p
 
         <div className="flex-1 min-w-0">
           <h1 className="text-blue-500 text-3xl md:text-5xl whitespace-nowrap overflow-hidden">
-            <NumberTicker value={100} /> +
+            <NumberTicker value={100} /> %
             <p className="text-gray-500 text-sm md:text-md">
-              Projectos Completados
+              Projectos 
             </p>
           </h1>
         </div>
