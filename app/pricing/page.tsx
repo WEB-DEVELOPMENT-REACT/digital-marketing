@@ -130,7 +130,7 @@ export default function Page() {
       monthlyPrice: 300,
       yearlyPrice: 3000,
       description: "Perfecto para propietarios de pequeños y medianos negocios",
-      features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
+      features: ["10 Videos","Web Incluida","Seo Posicionamiento", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
       actionLabel: "Adquirir",
       popular: true,
       link: ""
