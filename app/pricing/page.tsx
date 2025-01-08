@@ -128,7 +128,7 @@ export default function Page() {
     {
       title: "Entra en Acción",
       monthlyPrice: 300,
-      yearlyPrice: 3000,
+      yearlyPrice: 2500,
       description: "Perfecto para propietarios de pequeños y medianos negocios",
       features: ["10 Videos","Web Incluida","Seo Posicionamiento", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
       actionLabel: "Adquirir",

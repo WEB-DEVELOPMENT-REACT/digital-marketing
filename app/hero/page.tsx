@@ -75,13 +75,15 @@ hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4p
     <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
       <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
         <PiCheckBold className="text-xl text-blue-500" />
-        Videos
+        <Link href={"https://www.instagram.com/stories/highlights/17852522670147500/?hl=es"} passHref target="_blank">Videos</Link>
       </p>
     </BoxReveal>
     <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
       <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
         <PiCheckBold className="text-xl text-blue-500" />
+        <Link href={"https://duverxmobiledev.es"} passHref target="_blank" >
         Aplicaciones
+        </Link>
       </p>
     </BoxReveal>
     <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
