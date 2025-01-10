@@ -10,6 +10,7 @@ import ShowcaseNavbar from "@/components/showcase-navbar"
 import { FloatingNav } from "@/components/ui/FloatingNavBar"
 import { navItems } from "@/data"
 import Footer from "@/components/footer"
+import Image from "next/image"
 
 type PricingSwitchProps = {
   onSwitch: (value: string) => void
@@ -23,6 +24,7 @@ type PricingCardProps = {
   description: string
   features: string[]
   actionLabel: string
+  image?: string
   popular?: boolean
   exclusive?: boolean
   link:string
@@ -53,10 +55,10 @@ const PricingSwitch = ({ onSwitch }: PricingSwitchProps) => (
   <Tabs defaultValue="0" className="w-40 mx-auto" onValueChange={onSwitch}>
     <TabsList className="py-6 px-2">
       <TabsTrigger value="0" className="text-base">
-        Mes
+        Básic
       </TabsTrigger>
       <TabsTrigger value="1" className="text-base">
-        Año
+        Pro
       </TabsTrigger>
     </TabsList>
   </Tabs>
@@ -85,7 +87,6 @@ const PricingCard = ({ useisYearly, title, monthlyPrice, yearlyPrice, descriptio
         )}
         <div className="flex gap-0.5">
           <h3 className="text-3xl font-bold">{yearlyPrice && useisYearly ? "€" + yearlyPrice : monthlyPrice ? "€" + monthlyPrice : "Custom"}</h3>
-          <span className="flex flex-col justify-end text-sm mb-1">{yearlyPrice && useisYearly ? "/year" : monthlyPrice ? "/month" : null}</span>
         </div>
         <CardDescription className="pt-1.5 h-12">{description}</CardDescription>
       </CardHeader>
@@ -99,6 +100,7 @@ const PricingCard = ({ useisYearly, title, monthlyPrice, yearlyPrice, descriptio
       <Button className="relative inline-flex w-full items-center justify-center rounded-md bg-black text-white dark:bg-white px-6 font-medium  dark:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
         <div className="absolute -inset-0.5 -z-10 rounded-lg bg-gradient-to-b from-[#c7d2fe] to-[#8678f9] opacity-75 blur" />
         {actionLabel}
+        <Image src={"/favicon.ico"} alt={title} width={16} height={16} />
       </Button>
     </CardFooter>
   </Card>
@@ -121,17 +123,18 @@ export default function Page() {
       monthlyPrice: 150,
       yearlyPrice: 1500,
       description: "Lo esencial para empezar",
-      features: ["8 Videos","Gestion de Redes","3-5 horas de grabación", "Bot de Interacción con clientes"],
+      features: ["8 Videos","Gestion de Redes","3-5 horas de grabación"],
       actionLabel: "Adquirir",
       link: ""
     },
     {
-      title: "Entra en Acción",
+      title: "Crea una Web ",
       monthlyPrice: 300,
       yearlyPrice: 2500,
       description: "Perfecto para propietarios de pequeños y medianos negocios",
-      features: ["10 Videos","Web Incluida","Seo Posicionamiento", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
-      actionLabel: "Adquirir",
+      features: ["Web Incluida","Seo Posicionamiento", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
+      actionLabel: "Mensaje a",
+      image: "/favicon.ico",
       popular: true,
       link: ""
     },
@@ -139,7 +142,7 @@ export default function Page() {
       title: "Empresa",
       price: "Personalizado",
       description: "Dedicado al apoyo y la infraestructura que encaje a su necesidad.",
-      features: ["10 Videos","Web Incluida","Seo Posicionamiento", "App para Móviles","Despliegue AppStore/PlayStore", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
+      features: ["Custom Videos","Web Incluida","Seo Posicionamiento", "App para Móviles","Despliegue AppStore/PlayStore", "Manejo de Redes Sociales", "Bot de Interacción con clientes","Marketing Por Email", "IA Integrada"],
       actionLabel: "Contacto de Empresa",
       exclusive: true,
       link:""
@@ -155,7 +158,7 @@ export default function Page() {
       <PricingSwitch onSwitch={togglePricingPeriod} />
       <section className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-8 mt-8">
         {plans.map((plan) => {
-          return <PricingCard key={plan.title} {...plan} useisYearly={useisYearly} />
+          return <PricingCard key={plan.title} {...plan} useisYearly={useisYearly} image={plan.image} />
         })}
       </section>
       <div className="h-10">
