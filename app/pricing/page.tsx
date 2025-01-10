@@ -77,14 +77,14 @@ const PricingCard = ({ useisYearly, title, monthlyPrice, yearlyPrice, descriptio
               className={cn("px-2.5 rounded-xl h-fit text-sm py-1 bg-zinc-200 text-black dark:bg-zinc-800 dark:text-white", {
                   "bg-gradient-to-r from-orange-400 to-rose-400 dark:text-black ": popular,
                 })}>
-              Ahorra ${monthlyPrice * 12 - yearlyPrice}
+              Ahorra €{monthlyPrice * 12 - yearlyPrice}
             </div>
           </div>
         ) : (
             <CardTitle className="text-zinc-700 dark:text-zinc-300 text-lg">{title}</CardTitle>
         )}
         <div className="flex gap-0.5">
-          <h3 className="text-3xl font-bold">{yearlyPrice && useisYearly ? "$" + yearlyPrice : monthlyPrice ? "$" + monthlyPrice : "Custom"}</h3>
+          <h3 className="text-3xl font-bold">{yearlyPrice && useisYearly ? "€" + yearlyPrice : monthlyPrice ? "€" + monthlyPrice : "Custom"}</h3>
           <span className="flex flex-col justify-end text-sm mb-1">{yearlyPrice && useisYearly ? "/year" : monthlyPrice ? "/month" : null}</span>
         </div>
         <CardDescription className="pt-1.5 h-12">{description}</CardDescription>
