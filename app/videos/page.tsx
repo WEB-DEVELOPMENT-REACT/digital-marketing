@@ -13,7 +13,7 @@ const videos = [
     description: "Explorando ideas innovadoras para diseño web.",
   },
   {
-      source:"/images/car.mp4", // Ruta del archivo de video
+      source:"/images/carro.mp4", // Ruta del archivo de video
       title: "Paso 2: Creación de Contenido",
       description: "Producción de contenido visual y dinámico.",
     },
@@ -35,7 +35,7 @@ export default function Home() {
 
       <Element name="videos">
         <div className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto">
-          <h1 className="text-center text-3xl font-bold py-4">Nuestros Videos</h1>
+          <h1 className="text-center text-3xl font-bold py-4">Nuestros Proceso</h1>
           <p className="md:text-center py-4 md:w-1/2 mx-auto text-xl md:text-2xl text-gray-500">
             Descubre cómo ayudamos a nuestros clientes con proyectos visuales.
           </p>
