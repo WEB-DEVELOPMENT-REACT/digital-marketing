@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { FloatingNav } from "@/components/ui/FloatingNavBar";
 import { navItems } from "@/data";
-import { FaFacebook, FaWhatsapp, FaGithub } from "react-icons/fa";
+import { FaBitcoin, FaAddressCard } from "react-icons/fa";
 
 type PricingSwitchProps = {
   onSwitch: (value: string) => void;
@@ -75,11 +75,11 @@ const PricingCard = ({
   const getIcon = () => {
     switch (title) {
       case "Film and Go":
-        return <FaFacebook className="ml-2" />;
+        return <FaBitcoin className="ml-2" />;
       case "Crea una Web":
-        return <FaWhatsapp className="ml-2" />;
+        return <FaBitcoin className="ml-2" />;
       case "Empresa":
-        return <FaGithub className="ml-2" />;
+        return <FaAddressCard className="ml-2" />;
       default:
         return null;
     }
@@ -139,9 +139,19 @@ const PricingCard = ({
       </div>
       <CardFooter className="mt-2">
         <Button
-          className="relative inline-flex w-full items-center justify-center rounded-md bg-black text-white dark:bg-white px-6 font-medium dark:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+          className="
+      
+py-3 
+px-10
+md:px-16
+md:text-xl
+border-4
+border-black
+rounded-[6px]
+hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]"
           onClick={() => window.open(link, "_blank")}
         >
+        
           <div className="absolute -inset-0.5 -z-10 rounded-lg bg-gradient-to-b from-[#c7d2fe] to-[#8678f9] opacity-75 blur" />
           {actionLabel} 
           {getIcon()}
@@ -169,9 +179,9 @@ export default function Page() {
       yearlyPrice: 1500,
       description: "Lo esencial para empezar",
       features: ["8 Videos", "Gestión de Redes", "3-5 horas de grabación"],
-      actionLabel: "Adquirir",
+      actionLabel: "Pagar", 
       image: "/favicon.ico",
-      link: "https://facebook.com",
+      link: "https://s.binance.com/y5LrFs0z",
     },
     {
       title: "Crea una Web",
@@ -186,10 +196,10 @@ export default function Page() {
         "Marketing por Email",
         "IA Integrada",
       ],
-      actionLabel: "Mensaje a",
+      actionLabel: "Pagar ",
       image: "/favicon.ico",
       popular: true,
-      link: "https://wa.me",
+      link: "https://s.binance.com/5Tr0W1m8",
     },
     {
       title: "Empresa",
@@ -205,10 +215,10 @@ export default function Page() {
         "Marketing por Email",
         "IA Integrada",
       ],
-      actionLabel: "Contacto de Empresa",
+      actionLabel: "Contacto",
       exclusive: true,
       image: "/favicon.ico",
-      link: "https://github.com",
+      link: "https://wa.me/673685542",
     },
   ];
 
@@ -224,7 +234,7 @@ export default function Page() {
       <section className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-8 mt-8">
         {plans.map((plan) => {
           return <PricingCard key={plan.title} {...plan} useisYearly={useisYearly} />;
-        })}
+         })}
       </section>
     </div>
   );
