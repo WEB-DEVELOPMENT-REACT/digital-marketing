@@ -47,14 +47,15 @@ const PricingHeader = ({ title, subtitle }: { title: string; subtitle: string })
 );
 
 const PricingSwitch = ({ onSwitch }: PricingSwitchProps) => (
-  <Tabs defaultValue="0" className="w-40 mx-auto" onValueChange={onSwitch}>
-    <TabsList className="py-6 px-2">
+  <Tabs defaultValue="0" className="w-40 mx-auto " onValueChange={onSwitch}>
+    <TabsList className="py-6 flex justify-center gap-4 ">
       <TabsTrigger value="0" className="text-base">
-        Básic
+        Basic
       </TabsTrigger>
       <TabsTrigger value="1" className="text-base">
         Pro
       </TabsTrigger>
+ 
     </TabsList>
   </Tabs>
 );
@@ -170,6 +171,7 @@ const CheckItem = ({ text }: { text: string }) => (
 
 export default function Page() {
   const [useisYearly, setIsYearly] = useState(false);
+
   const togglePricingPeriod = (value: string) => setIsYearly(parseInt(value) === 1);
 
   const plans = [
@@ -233,7 +235,7 @@ export default function Page() {
       <PricingSwitch onSwitch={togglePricingPeriod} />
       <section className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-8 mt-8">
         {plans.map((plan) => {
-          return <PricingCard key={plan.title} {...plan} useisYearly={useisYearly} />;
+          return <PricingCard key={plan.title} {...plan} useisYearly={useisYearly}  />;
          })}
       </section>
     </div>
