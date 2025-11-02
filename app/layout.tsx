@@ -5,17 +5,79 @@ import { Analytics } from "@vercel/analytics/react";
 
 const font = Space_Grotesk({ subsets: ["latin"] });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://birdmarketing.es";
+
 export const metadata: Metadata = {
-  title: "Bird | Marketing & Development Studio",
-  description: "Haz crecer tu negocio con Bird, especialistas en marketing y desarrollo de software.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Bird | Marketing, Automatización e IA",
+    template: "%s | Bird",
+  },
+  description:
+    "Bird diseña y ejecuta estrategias de marketing, automatización e inteligencia artificial para escalar marcas digitales con sprints medibles.",
+  keywords: [
+    "marketing digital",
+    "automatización",
+    "inteligencia artificial",
+    "growth marketing",
+    "valencia",
+    "paid media",
+    "crm",
+    "bird",
+  ],
+  authors: [{ name: "Bird" }],
+  creator: "Bird",
+  publisher: "Bird",
+  category: "Marketing",
   openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: siteUrl,
+    title: "Bird | Marketing, Automatización e IA",
+    description:
+      "Sprints de marketing, automatización e IA para acelerar adquisición, contenidos y reporting sin fricción.",
+    siteName: "Bird",
     images: [
       {
-        url: 'https://www.google.com/maps/uv?viewerState=lb&pb=!1s0x11ae81c94242f451:0x2a6b0cac40414137!5sGlobstand+technologies&imagekey=!1e10!2sAF1QipPrTTNGxsOszQTXFD3b68e40o0V_LiVsTWwh-H6&cr=rp_35',
-        width: 1200,
-        height: 630,
-        alt: 'Bird Logo',
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
+        alt: "Bird logo",
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bird | Marketing, Automatización e IA",
+    description:
+      "Automatizamos, creamos y mejoramos tu operación de marketing con inteligencia artificial.",
+    images: [
+      {
+        url: "/favicon.png",
+        alt: "Bird logo",
+      },
+    ],
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
   },
 };
@@ -26,18 +88,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-      <link rel="icon" href="/favicon.png" sizes="any" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-      </head>
+    <html lang="es">
       <body className={font.className}>
-
         {children}
         <Analytics />
-
       </body>
     </html>
   );
