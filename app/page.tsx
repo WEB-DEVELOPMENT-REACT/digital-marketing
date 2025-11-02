@@ -6,99 +6,111 @@ import { ScrollBasedVelocityDemo } from "@/components/demos/scroll-based-velocit
 import { WordPullUpDemo } from "@/components/demos/word-pull-up-demo";
 
 import Image from "next/image";
-import { Link as ScrollLink, Element } from "react-scroll";
+import Link from "next/link";
+import { Element } from "react-scroll";
 import { IconStarFilled } from "@tabler/icons-react";
 import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo";
 import LetsMakeThingsHappenSection from "@/components/ui/lets-make-things-happen";
-import ShowcaseNavbar from "@/components/showcase-navbar";
 import Hero from "./hero/page";
-import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/footer";
 import { FloatingNav } from "@/components/ui/FloatingNavBar";
 import { navItems } from "@/data";
+import { servicesList } from "@/data/services";
 
-
-const services = [
+const successHighlights = [
   {
-    icon: "/images/s_6.png",
-    title: "Web Design + Development",
-    description:
-      "Lleva tu negocio al siguiente nivel con nuestros servicios de diseño y desarrollo web",
+    value: "x1.6",
+    label: "ROAS medio",
+    description: "Promedio reciente en campañas para retail y educación en España y Europa.",
   },
   {
-    icon: "/images/s_1.png",
-    title: "Search Engine Optimization",
-    description:
-      "Lleva tu sitio web a los primeros resultados de búsqueda con nuestros servicios de SEO",
+    value: "-42%",
+    label: "Coste por lead",
+    description: "Reducción media tras implementar automatizaciones y nurturing con IA.",
   },
   {
-    icon: "/images/s_5.png",
-    title: "Content Creation",
-    description: "Con nuestros servicios de creación de contenido, ayudamos a las empresas a generar resultados",
- 
-   },
-  {
-    icon: "/images/s_3.png",
-    title: "Social Media Marketing",
-    description: 
-       "Impulsa la presencia en línea de tu marca con nuestros servicios de marketing en redes sociales",
- 
-   },
-  {
-    icon: "/images/s_4.png",
-    title: "Email Marketing",
-    description:"Interactúa con tus clientes y aumenta las ventas con nuestros servicios de email marketing",
-      },
-  {
-    icon: "/images/s_2.png",
-    title: "Pay-Per-Click Advertising",
-    description:
-      "No desperdicies dinero en publicidad ineficaz. Nuestros servicios de PPC te ayudará a alcanzar tu público objetivo",
+    value: "8 semanas",
+    label: "De briefing a resultados",
+    description: "Primer sprint con sitio, campañas operativas y reporting en marcha.",
   },
 ];
 
+const aiSolutions = [
+  {
+    title: "Asistentes 24/7",
+    description: "Bots multilingües entrenados con tu contenido para captar y cualificar leads sin perder tono de marca.",
+  },
+  {
+    title: "Automatización end-to-end",
+    description: "Workflows Make/Zapier que sincronizan formularios, CRM, email, WhatsApp y facturación.",
+  },
+  {
+    title: "Dashboards predictivos",
+    description: "GA4 y Looker Studio conectados a ventas para prever demanda y priorizar acciones cada semana.",
+  },
+];
+
+const faqs = [
+  {
+    question: "¿Trabajáis solo con empresas de Valencia?",
+    answer: "Tenemos HQ en Valencia pero operamos con equipos remotos en España, Portugal, Francia y LATAM."
+  },
+  {
+    question: "¿Qué incluye la auditoría gratuita?",
+    answer: "Analizamos tu funnel actual, detectamos quick wins y entregamos un roadmap con sprints, presupuesto y métricas."
+  },
+  {
+    question: "¿Podéis integraros con nuestro stack actual?",
+    answer: "Sí. Trabajamos con HubSpot, Pipedrive, Zoho, Holded, Salesforce y soluciones custom via API/Make."
+  },
+];
 
 export default function Home() {
   return (
-    <div
-      className="overflow-clip 
- inset-0 
- -z-10 h-full w-full bg-[#fafafa]
-  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
-   bg-[size:14px_24px]"
-    >
-      <FloatingNav navItems={navItems}/>
+    <div className="overflow-clip -z-10 h-full w-full bg-[#fafafa] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+      <FloatingNav navItems={navItems} />
 
-     <Hero/>
+      <Hero />
 
-      <Element name="services">
-        <div className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto ">
-        <h1>
-          <WordPullUpDemo />
-        </h1>
-        <p className="md:text-center py-4 md:w-1/2 mx-auto text-xl md:text-2xl text-gray-500">
-        Todos nuestros servicios están diseñados para ayudar a destacar tu negocio.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="flex flex-col justify-between h-full space-y-4 text-center bg-gray-100 p-4 cursor-pointer hover:scale-105 transition-transform rounded-md"
+      <Element name="services" id="servicios">
+        <section className="mx-6 mt-16 flex flex-col gap-6 md:mx-auto md:w-4/5">
+          <h2>
+            <WordPullUpDemo />
+          </h2>
+          <p className="mx-auto max-w-3xl text-center text-lg text-slate-600 md:text-xl">
+            Estrategia, creatividad y tecnología para posicionar tu marca, captar demanda y escalar ingresos sin improvisar.
+          </p>
+          <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-3">
+            {servicesList.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="flex h-full flex-col justify-between space-y-4 rounded-md border border-slate-200 bg-white/80 p-6 text-center shadow-sm transition hover:scale-[1.02] hover:shadow-lg"
               >
                 <Image
                   src={service.icon}
-                  width={10000}
-                  height={10000}
-                  className="object-contain bg-gray-100 p-4 w-full h-40 rounded-md"
-                  alt="image"
+                  width={100}
+                  height={100}
+                  className="mx-auto h-24 w-24 object-contain"
+                  alt={service.title}
                 />
-                <h1 className="text-xl font-medium">{service.title}</h1>
-                <p className="text-gray-500">{service.description}</p>
+                <h3 className="text-lg font-semibold text-slate-900">{service.title}</h3>
+                <p className="text-sm text-slate-600">{service.shortDescription}</p>
+                <span className="text-sm font-semibold text-blue-600">Ver detalles →</span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {successHighlights.map((highlight) => (
+              <div key={highlight.label} className="rounded-2xl border border-blue-100 bg-blue-50/70 p-6 text-center shadow-sm">
+                <span className="text-4xl font-semibold text-blue-600">{highlight.value}</span>
+                <h4 className="mt-2 text-lg font-medium text-slate-900">{highlight.label}</h4>
+                <p className="mt-2 text-sm text-slate-600">{highlight.description}</p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </Element>
 
       <section className="py-20">
@@ -106,91 +118,111 @@ export default function Home() {
       </section>
 
       <Element name="process">
-        <main className="md:px-0 mx-3 md:mx-auto">
-        <h1 className="text-2xl md:text-5xl md:text-center font-medium flex items-center gap-x-2 mx-auto justify-center">
-        Nuestro {" "}
-            <span className="text-blue-500 flex gap-x-1 items-center">
-              {" "}
-              <Image
-                src={"/icons/squiggle.svg"}
-                width={10000}
-                height={10000}
-                className="w-6"
-                alt="image"
-              />
-               Creativo 
-              <Image
-                src={"/icons/star.svg"}
-                width={10000}
-                height={10000}
-                className="w-6 mb-8"
-                alt="image"
-              />
-            </span>{" "}
-             Proceso 
-          </h1>
-
-          <p className="text-center 
-          py-4 md:w-1/2 mx-auto 
-          text-xl md:text-2xl text-gray-500">
-            Todos nuestros servicios son diseñados para ayudar a tu negocio a ser visible.
+        <section className="mx-6 flex flex-col gap-6 md:mx-auto md:w-4/5">
+          <h2 className="text-center text-2xl font-semibold text-slate-900 md:text-5xl">
+            Nuestro proceso en sprints de 4 semanas
+          </h2>
+          <p className="mx-auto max-w-3xl text-center text-lg text-slate-600">
+            Workshops para alinear, construcción de activos y automatizaciones en paralelo, medición constante y backlog priorizado.
           </p>
-
-          <div className="flex flex-col md:flex-row items-center justify-center w-full md:w-1/2 mx-auto">
-          <div className="w-full md:w-1/2 order-2 md:order-1">
-            <AnimatedBeamMultipleOutputDemo />
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm">
+              <AnimatedBeamMultipleOutputDemo />
+            </div>
+            <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm">
+              <BoxRevealDemo />
+            </div>
           </div>
-          <div className="w-full md:w-1/2 order-1 md:order-2 md:ml-0">
-            <BoxRevealDemo />
-          </div>
-
-          </div>
-
-        </main>
+        </section>
       </Element>
 
-      <section>
-        <main className="md:flex items-center justify-center space-y-6 md:space-y-0 md:gap-x-20 xl:w-4/5 2xl:w-[68%] mx-auto px-6 md:px-0">
-          <Image
-            src={"/logo/logo.webp"}
-            width={10000}
-            height={10000}
-            className=" md:w-1/3 rounded-md"
-            alt="image"
-          />
-          <div className="flex flex-col gap-y-5 md:w-1/2">
-            <h1 className="text-lg md:text-2xl ">
-              Venimos trabajando el servicio puerta a puerta desde el 2022
-              hoy contamos con sitio oficial y un lugar increible para divulgar
-              ayudamos a crecer negocios. Nos unimos a un desarrollador y colaboramos
-              en ver progreso.
-            </h1>
-            <div className="flex items-center gap-x-1">
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-            </div>
-
-            <span className="text-xl font-medium">
-              Muriel, Duver <br />
-              CEO, 
-            </span>
+      <section className="mx-6 my-16 flex flex-col gap-6 md:mx-auto md:w-4/5 md:flex-row md:items-center md:gap-16">
+        <Image
+          src="/images/profile.png"
+          width={1200}
+          height={800}
+          className="w-full rounded-2xl object-cover md:w-1/2"
+          alt="Equipo Bird trabajando"
+        />
+        <div className="flex flex-col gap-5 md:w-1/2">
+          <h3 className="text-3xl font-semibold text-slate-900">
+            Bird es tu equipo híbrido de marketing, data y tecnología con base en Valencia y alcance europeo.
+          </h3>
+          <p className="text-lg text-slate-600">
+            Operamos con pymes, scaleups y organizaciones públicas en España, Portugal, Francia y LATAM. Nos integramos con tus equipos internos o lideramos el proyecto de principio a fin.
+          </p>
+          <div className="flex items-center gap-2 text-yellow-500">
+            <IconStarFilled className="text-3xl" />
+            <IconStarFilled className="text-3xl" />
+            <IconStarFilled className="text-3xl" />
+            <IconStarFilled className="text-3xl" />
+            <IconStarFilled className="text-3xl" />
+            <span className="text-sm text-slate-600">4.9/5 según clientes y partners</span>
           </div>
-        </main>
+          <div className="grid gap-2 text-sm text-slate-600">
+            <p>- Equipo senior con experiencia en retail, turismo, educación y proyectos institucionales.</p>
+            <p>- Partners oficiales de Meta y Google; especialistas en automatización Make/Zapier.</p>
+            <p>- Modelo colaborativo: sprints transparentes, reporting compartido y comunicación directa.</p>
+          </div>
+          <span className="text-lg font-medium text-slate-900">Muriel &amp; Duver — Co-founders de Bird</span>
+        </div>
       </section>
+
+      <Element name="ia" id="ia">
+        <section className="mx-6 my-16 rounded-[36px] border border-blue-100 bg-blue-50/70 p-8 shadow-[0_25px_55px_-40px_rgba(30,64,175,0.35)] md:mx-auto md:w-4/5">
+          <div className="mx-auto space-y-4 text-center md:w-3/5">
+            <p className="text-xs uppercase tracking-[0.35em] text-blue-500">Soluciones IA</p>
+            <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+              Automatizamos tu funnel con inteligencia artificial a medida
+            </h2>
+            <p className="text-base text-slate-600">
+              Detectamos casos de uso, conectamos tus herramientas y desplegamos asistentes, workflows y reporting que generan resultados desde el primer sprint.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {aiSolutions.map((solution) => (
+              <div key={solution.title} className="rounded-2xl border border-white/60 bg-white/80 p-6 text-left shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">{solution.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{solution.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </Element>
 
       <Element name="guarentees">
         <ShootingStarsAndStarsBackgroundDemo />
       </Element>
 
-      <section className="my-10 md:py-20 xl:w-4/5 2xl:w-[68%] md:mx-auto">
-      <LetsMakeThingsHappenSection />
+      <Element name="faq" id="faq">
+        <section className="mx-6 py-16 md:mx-auto md:w-4/5">
+          <div className="mx-auto space-y-4 text-center md:w-3/5">
+            <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">Preguntas frecuentes</h2>
+            <p className="text-lg text-slate-600">
+              ¿Dudas específicas? Escríbenos por WhatsApp o agenda una llamada y lo resolvemos en minutos.
+            </p>
+          </div>
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm transition hover:border-blue-200"
+              >
+                <summary className="cursor-pointer text-lg font-medium text-slate-900">
+                  {faq.question}
+                </summary>
+                <p className="mt-3 text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </Element>
+
+      <section className="my-10 md:py-20 md:mx-auto md:w-4/5">
+        <LetsMakeThingsHappenSection />
       </section>
 
-
-<Footer/>
+      <Footer />
     </div>
   );
 }

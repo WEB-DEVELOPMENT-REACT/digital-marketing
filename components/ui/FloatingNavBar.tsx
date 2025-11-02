@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, CalendarIcon } from "lucide-react";
 
 export const FloatingNav = ({
   navItems,
@@ -106,14 +106,15 @@ export const FloatingNav = ({
           <span>Login</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button> */}
-          <div className="hidden md:flex items-center gap-x-4">
-        <Link
-          href={"tel:+34673685542"}
-          className="py-3 px-6 text-md hover:bg-[#abcbff] flex rounded-[6px] border-2 border-black text-white bg-[#121212] transition duration-200 hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]"
-        >
-        📞 Llamar
-        </Link>
-    </div>
+        <div className="hidden items-center gap-x-3 md:flex">
+          <Link
+            href="/meeting"
+            className="inline-flex items-center gap-2 rounded-[6px] border-2 border-black bg-[#121212] px-5 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#1f3bff] hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)]"
+          >
+            <CalendarIcon className="h-4 w-4" />
+            Reservar diagnóstico
+          </Link>
+        </div>
     <button
       type="button"
       onClick={() => setMobileOpen((prev) => !prev)}
@@ -151,12 +152,6 @@ export const FloatingNav = ({
                 className="inline-flex items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-600"
               >
                 Reservar diagnóstico
-              </Link>
-              <Link
-                href="tel:+34673685542"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-600"
-              >
-                📞 Llamar
               </Link>
             </div>
           </motion.div>
