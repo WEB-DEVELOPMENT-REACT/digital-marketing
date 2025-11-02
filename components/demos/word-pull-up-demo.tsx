@@ -4,7 +4,7 @@ export function WordPullUpDemo() {
   return (
     <WordPullUp
     className="text-3xl md:text-5xl md:text-center font-medium"
-      words="Construimos desde Cero"
+      words="Servicios 360º para crecer con marketing e IA"
     />
   );
 }

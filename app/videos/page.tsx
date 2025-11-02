@@ -9,18 +9,18 @@ import { navItems } from "@/data";
 const videos = [
   {
     source: "/images/carrs.mp4", // Ruta del archivo de video
-    title: "Paso 1: Diseño Web",
-    description: "Explorando ideas innovadoras para diseño web.",
+    title: "Sprint 1: Estrategia y blueprint",
+    description: "Workshops con stakeholders, definición de objetivos y mapa de mensajes.",
   },
   {
       source:"/images/carro.mp4", // Ruta del archivo de video
-      title: "Paso 2: Creación de Contenido",
-      description: "Producción de contenido visual y dinámico.",
+      title: "Sprint 2: Contenido y producción",
+      description: "Grabamos piezas de vídeo, generamos creatividades y entrenamos asistentes IA.",
     },
     {
       source:"/images/mark.mp4", // Ruta del archivo de video
-      title: "Paso 3: SEO en acción",
-      description: "Resultados de campañas de SEO recientes.",
+      title: "Sprint 3: Activación y optimización",
+      description: "Campañas en marcha, automatizaciones live y reporting en tiempo real.",
     },
 ];
 
@@ -35,9 +35,9 @@ export default function Home() {
 
       <Element name="videos">
         <div className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto">
-          <h1 className="text-center text-3xl font-bold py-4">Nuestros Proceso</h1>
+          <h1 className="text-center text-3xl font-bold py-4">Nuestro proceso en acción</h1>
           <p className="md:text-center py-4 md:w-1/2 mx-auto text-xl md:text-2xl text-gray-500">
-            Descubre cómo ayudamos a nuestros clientes con proyectos visuales.
+            Tres sprints donde combinamos estrategia, creatividad y automatización para generar resultados.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">

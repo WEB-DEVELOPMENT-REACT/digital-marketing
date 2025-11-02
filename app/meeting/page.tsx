@@ -1,12 +1,11 @@
 "use client";
 
 
-import Calendly from "./calendly";
-import ShowcaseNavbar from "@/components/showcase-navbar";
 import { PiCheckCircle } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { FloatingNav } from "@/components/ui/FloatingNavBar";
 import { navItems } from "@/data";
+import ScheduleWidget from "./schedule-widget";
 
 const checkItemVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -29,28 +28,27 @@ const Meeting = () => {
       <FloatingNav navItems={navItems}/>
       <div className="md:px-0 px-6 xl:w-4/5 2xl:w-[68%] justify-between md:mt-14 md:flex mx-auto  ">
         <div className="md:w-2/5">
-          <h1 className="text-4xl font-semibold pt-10   ">Conozcámonos</h1>
+          <h1 className="text-4xl font-semibold pt-10">Agenda una sesión estratégica</h1>
           <p className="text-lg text-gray-500 py-4">
-          Siempre nos entusiasma conocer nuevas personas y hablar sobre nuevos proyectos.
-           No dude en concertar una reunión con nosotros.
+            Operamos desde Valencia con equipos distribuidos por Europa. En 30 minutos analizamos tu funnel, detectamos quick wins y diseñamos el siguiente sprint.
           </p>
 
           {[
                 {
-                  title: "Desarrollo y Diseño",
+                  title: "Auditoría IA personalizada",
                   description:
-                    "Convierte tus ideas en realidad con nuestros servicios de desarrollo y diseño.",
+                    "Identificamos casos de uso reales para tu negocio y las herramientas adecuadas para implementarlos.",
                 },
 
                 {
-                  title: "Consulta Libre",
+                  title: "Plan de acción en 4 semanas",
                   description:
-                    "Obtenga asesoramiento de expertos sobre cómo mejorar su negocio y aumentar su presencia en línea.",
+                    "Definimos campañas, automatizaciones y entregables concretos para el próximo sprint.",
                 },
                 {
-                  title: "Soport Técnico",
+                  title: "Seguimiento y soporte",
                   description:
-                    "Obtenga soporte técnico para su sitio web o aplicación.",
+                    "Te acompañamos con check-ins, dashboards y coordinación con tu equipo interno o partners.",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -58,7 +56,7 @@ const Meeting = () => {
                   variants={checkItemVariants}
                   initial="hidden"
                   animate="visible"
-                  transition={{ delay: index * 1.8 }}
+                  transition={{ delay: index * 0.2 }}
                   className="flex gap-x-4 py-4"
                 >
                   <PiCheckCircle className=" rounded-md text-[#3d80d7] text-2xl flex-shrink-0" />
@@ -73,7 +71,7 @@ const Meeting = () => {
         </div>
 
     <div className="md:w-1/2">
-      <Calendly />
+      <ScheduleWidget />
       </div>
       </div>
     </div>

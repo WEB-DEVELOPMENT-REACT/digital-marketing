@@ -22,11 +22,11 @@ const Showcase = () => {
         <div className="flex items-center justify-center relative">
           <WordFadeIn
             className="text-3xl pt-20 lg:text-5xl font-semibold max-w-3xl mx-auto md:text-center   z-20  "
-            words="Diseño y Código Que Ayudará Crecer tu Negocio"
+            words="Casos de marketing e IA que impulsan marcas valencianas"
           />
         </div>
         <p className="md:text-center text-xl md:text-2xl my-6   md:w-4/5 mx-auto text-gray-500">
-          Echale un vistazo a nuestro proyectos recientes
+          Proyectos donde combinamos paid media, contenido, automatización y reporting avanzado.
         </p>
 
         <BlurFadeDemo />

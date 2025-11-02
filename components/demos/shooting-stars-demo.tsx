@@ -6,59 +6,43 @@ import Image from "next/image";
 const features = [
   {
     icon: "/icons/fast.svg",
-    title: "Entrega Rápida",
-    description: "Entrega en 1-2 semanas para la mayoría de los proyectos. Llámanos para más información.",
+    title: "Sprints cada 4 semanas",
+    description: "Planificamos, ejecutamos y entregamos mejoras mensuales con objetivos y métricas claras.",
   },
   {
     icon: "/icons/design.svg",
-    title: "Diseño y Desarrollo",
-    description: "Diseñamos y desarrollamos tu sitio web con las últimas tecnologías y tendencias.",
-  },
-  {
-    icon: "/icons/scalable.svg",
-    title: "Escalabilidad + Mantenimiento",
-    description: "Ofrecemos mantenimiento y escalabilidad para todos los sitios web.",
-  },
-  {
-    icon: "/icons/team.svg",
-    title: "Equipo de Expertos",
-    description: "Un equipo de expertos listo para ayudarte en todo momento.",
-  },
-  {
-    icon: "/icons/safe.svg",
-    title: "Construcción Segura",
-    description: "Prácticas de construcción seguras para garantizar que tus datos estén protegidos.",
+    title: "Stack a medida",
+    description: "Seleccionamos tecnología y herramientas IA según tu equipo, presupuesto y sector.",
   },
   {
     icon: "/icons/analytics.svg",
-    title: "Seguimiento de Analíticas",
-    description: "Haz un seguimiento de tu progreso con nuestras analíticas integradas.",
+    title: "Data & reporting",
+    description: "Dashboards en Looker Studio, seguimiento GA4 y alertas con los datos que importan.",
   },
   {
-    icon: "/icons/flexible.svg",
-    title: "Sitios Web Dinámicos",
-    description: "Construimos soluciones dinámicas que son fáciles de gestionar.",
+    icon: "/icons/safe.svg",
+    title: "Gobernanza de IA",
+    description: "Modelos alineados a tu tono, políticas de privacidad y cumplimiento normativo europeo.",
+  },
+  {
+    icon: "/icons/team.svg",
+    title: "Equipo senior",
+    description: "Estrategas, creativos y desarrolladores con experiencia en pymes y scaleups valencianas.",
   },
   {
     icon: "/icons/support.svg",
-    title: "Soporte 24/7",
-    description: "Ofrecemos soporte 24/7 para todos nuestros clientes. Llámanos para más información.",
+    title: "Acompañamiento continuo",
+    description: "Capacitamos a tu equipo, documentamos procesos y estamos disponibles para iterar juntos.",
   },
-  {
-    icon: "/icons/money.svg",
-    title: "Precios Asequibles",
-    description: "Precios asequibles para todos nuestros clientes.",
-  },
-  
 ];
 
 export function ShootingStarsAndStarsBackgroundDemo() {
   return (
     <div className="mt-20 py-10 md:py-20 rounded-[40px] bg-neutral-900 flex flex-col items-center justify-center relative w-full px-6 md:px-0">
       <h2 className="relative flex-col  z-10 text-3xl md:text-5xl md:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 via-white to-white flex items-center gap-2 ">
-        Nuestras Garantias para ti.
+        Garantías para trabajar juntos con confianza
         <p className="md:text-center   mx-auto  text-xl md:text-2xl text-gray-200">
-        Garantizamos la más alta calidad de trabajo, con los tiempos de entrega más rápidos.
+        Comprometidos con resultados, transparencia y adopción tecnológica responsable.
         </p>
       </h2>
 

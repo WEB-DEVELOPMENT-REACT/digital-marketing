@@ -1,8 +1,6 @@
 'use client'
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "../magicui/animated-shiny-text";
-import { FcGoogle } from "react-icons/fc";
-
 export function AnimatedShinyTextDemo() {
   return (
     <div className="z-10 flex items-center md:justify-center">
@@ -18,24 +16,13 @@ export function AnimatedShinyTextDemo() {
           hover:text-neutral-600 
           hover:duration-300
            hover:dark:text-neutral-400">
-          <div className="
-          md:flex
-          flex-col-reverse
-          md:flex-row
-          justify-between
-          gap-x-6">
-          ⭐{" "}   ⭐{" "}   ⭐{" "}   ⭐{" "}   ⭐
-          <div className=" lg:flex  items-center space-x-2 py-2 md:py-0">
-            <a href="https://www.google.com/search?q=bird+marketing&rlz=1C5CHFA_enES1101ES1101&oq=bird&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTISCAEQLhhDGK8BGMcBGIAEGIoFMg4IAhBFGCcYOxiABBiKBTIGCAMQRRg7MgoIBBAuGLEDGIAEMgYIBRBFGD0yBggGEEUYPTIGCAcQRRg90gEINDE4MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8" className="lg:flex">
-          <FcGoogle className="h-6 w-6  md:py-0 items-center lg:flex " />
-            <span className="text-gray-600 hover:underline cursor-pointer ">
-            <button className="hidden px-4 py-2 rounded-md lg:flex items-center gap-x-3">
-          
-              4.9 stars 200+ google reviews
-            </button>
+          <div className="md:flex md:flex-row flex-col md:items-center md:justify-center gap-4 text-gray-700">
+            <span className="text-sm uppercase tracking-[0.3em] text-blue-600">
+              Agencia IA-first
             </span>
-          </a>
-          </div>
+            <span className="text-sm text-gray-600">
+              Valencia HQ · Proyectos en España y Europa · Equipo híbrido marketing + data
+            </span>
           </div>
         </AnimatedShinyText>
       </div>
