@@ -11,6 +11,7 @@ import { Element } from "react-scroll";
 import { IconStarFilled } from "@tabler/icons-react";
 import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo";
 import LetsMakeThingsHappenSection from "@/components/ui/lets-make-things-happen";
+import CollaboratorsShowcase from "@/components/ui/collaborators-showcase";
 import Hero from "./hero/page";
 import Footer from "@/components/footer";
 import { FloatingNav } from "@/components/ui/FloatingNavBar";
@@ -111,6 +112,10 @@ export default function Home() {
             ))}
           </div>
         </section>
+      </Element>
+
+      <Element name="partners" id="colaboraciones">
+        <CollaboratorsShowcase />
       </Element>
 
       <section className="py-20">
