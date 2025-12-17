@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, CalendarIcon, CheckCircle2 } from "lucide-react";
 
@@ -8,104 +9,99 @@ import { navItems } from "@/data";
 
 const plans = [
   {
-    id: "launch",
-    title: "Lanzamiento",
-    price: "Desde 4.500 €",
-    duration: "6 semanas",
-    badge: "Para pymes y startups",
+    id: "web-dev",
+    category: "Web / Desarrollo",
+    product: "Web Estratégica + Desarrollo",
+    badge: "Producto mínimo viable",
+    price: "1.500 – 3.000 €",
     description:
-      "Validamos propuesta de valor, activamos captación y dejamos una base tecnológica lista para iterar.",
+      "Proyecto llave en mano para lanzar o renovar tu sitio con foco en conversión, velocidad y tracking.",
     includes: [
-      "Sitio main + landing de campañas en Next.js con CMS",
-      "Setup completo de analítica (GA4, pixel, conversiones) y CRM ligero",
-      "Campañas Meta + Google con creatividades y copywriting de arranque",
-      "Chatbot FAQ entrenado con tu contenido para captar y calificar leads",
+      "Web enfocada en conversión y performance",
+      "Arquitectura estratégica y UX orientada a negocio",
+      "Optimización móvil + velocidad",
+      "Copywriting persuasivo alineado a la propuesta de valor",
+      "Pixel + eventos y SMS conectados",
+      "SEO técnico inicial",
+      "Integración con WhatsApp API para captación y soporte",
     ],
-    automation: [
-      "Flujos email/WhatsApp para nuevos leads",
-      "Dashboard Looker Studio con métricas clave",
-      "Playbook de contenidos para los próximos 60 días",
-    ],
-    results: [
-      "Lead funnel operativo y mensurables desde el primer mes",
-      "Mensajes y audiencias validadas para escalar",
-      "Roadmap claro de siguientes sprints",
-    ],
-    ctaLabel: "Reservar diagnóstico",
-    ctaLink: "/meeting",
-  },
-  {
-    id: "growth",
-    title: "Crecimiento",
-    price: "Desde 3.200 €/mes",
-    duration: "Sprint continuo (mín. 3 meses)",
-    badge: "Más elegido",
-    description:
-      "Tu equipo extendido para escalar adquisición multicanal, contenidos e ingresos con previsibilidad.",
-    includes: [
-      "Experiencias web + blog con contenido SEO recurrente",
-      "Paid media omnicanal (Meta, Google, LinkedIn, TikTok)",
-      "Producción audiovisual mensual y biblioteca de creatividades",
-      "IA conversacional conectada a CRM y herramientas de soporte/ventas",
-    ],
-    automation: [
-      "Workflows en Make/Zapier integrando CRM, facturación y soporte",
-      "Scoring predictivo y cohortes para priorizar oportunidades",
-      "Reporting semanal con backlog priorizado y próximos experiments",
-    ],
-    results: [
-      "Incremento constante de MQL/SQL y ROAS",
-      "Playbooks comerciales y de contenidos evolucionando cada sprint",
-      "Gobernanza clara entre marketing, ventas y producto",
-    ],
-    ctaLabel: "Hablar con Bird",
-    ctaLink: "/meeting",
-  },
-  {
-    id: "enterprise",
-    title: "Enterprise",
-    price: "Proyecto a medida",
-    duration: "Roadmap anual",
-    badge: "Corporaciones y organismos",
-    description:
-      "Squad estratégico para transformar la experiencia digital end-to-end y desplegar IA a escala internacional.",
-    includes: [
-      "Discovery multi-país y co-creación de estrategia omnicanal",
-      "Arquitectura de datos unificada (DWH + BI + dashboards ejecutivos)",
-      "Integraciones a medida con ERP, CRM y apps internas",
-      "Programas de formación y adopción IA para equipos internos",
-    ],
-    automation: [
-      "Automatización avanzada de procesos y canales",
-      "Modelos predictivos para demanda, pricing y churn",
-      "Frameworks de gobernanza IA, compliance y seguridad",
-    ],
-    results: [
-      "Roadmap de transformación con OKRs compartidos",
-      "Squads coordinados con SLAs y comunicación data-driven",
-      "Expansión internacional alineada con branding y performance",
-    ],
+    note: "Rango según número de secciones, integraciones y CMS.",
     ctaLabel: "Solicitar propuesta",
+    ctaLink: "/meeting",
+  },
+  {
+    id: "paid-media",
+    category: "Paid Media",
+    product: "Meta Ads + Google Ads + TikTok Ads",
+    badge: "Gestión mensual",
+    price: "500 €/mes de gestión + inversión ads",
+    description:
+      "Planificación, activación y optimización multicanal orientada a leads, ventas o tráfico cualificado.",
+    includes: [
+      "Definición de objetivos y KPIs (tráfico, leads, conversiones, mensajes)",
+      "Investigación estratégica de públicos y segmentaciones",
+      "Estructuración de campañas en Meta, TikTok y Google (Search/Display)",
+      "Configuración de conjuntos de anuncios y variaciones creativas",
+      "Copies publicitarios orientados a conversión",
+      "Uso estratégico y adaptación básica de creativos entregados por el cliente",
+      "Creación de hasta 2 piezas gráficas simples por campaña con assets del cliente",
+      "Optimización básica durante la campaña y recomendaciones continuas",
+      "Lectura de métricas clave (CTR, CPC, CPA, conversiones)",
+    ],
+    note: "Fee fijo de gestión; inversión publicitaria se paga por separado.",
+    ctaLabel: "Agendar diagnóstico",
+    ctaLink: "/meeting",
+  },
+  {
+    id: "social",
+    category: "Gestión de redes sociales",
+    product: "Contenido Estratégico + UGC Premium",
+    badge: "Community manager",
+    price: "200 €/mes",
+    description:
+      "Gestión y contenido listos para publicar con enfoque en comunidad, autoridad y conversión.",
+    includes: [
+      "Gestión y administración diaria de las redes de la marca",
+      "Planificación mensual de contenido alineada a objetivos",
+      "Definición de pilares: educativo, autoridad, confianza y conversión",
+      "Lineamientos creativos para campañas y contenidos",
+      "Creación de 10 guiones y briefs para que el cliente grabe",
+      "Copies estratégicos y llamados a la acción",
+      "Ideas UGC adaptadas a performance (sin grabación en agencia)",
+      "Programación y organización del contenido en plataformas",
+      "Supervisión de coherencia visual y narrativa",
+      "Seguimiento básico de desempeño (alcance, interacción)",
+    ],
+    note: "Ideal para mantener cadencia constante con apoyo creativo.",
+    ctaLabel: "Hablar por WhatsApp",
     ctaLink: "https://wa.me/673685542",
   },
 ];
 
 const comparison = [
   {
-    label: "Equipo dedicado",
-    values: ["Digital lead + PM", "Squad multidisciplinar", "Squad + chapter leads"],
+    label: "Objetivo principal",
+    values: [
+      "Lanzar o renovar web orientada a conversión",
+      "Escalar captación con campañas de pago",
+      "Construir comunidad y contenido constante",
+    ],
   },
   {
-    label: "Velocidad",
-    values: ["Sprint único", "Sprints mensuales", "Roadmap trimestral"],
+    label: "Alcance",
+    values: [
+      "Arquitectura UX, copy y medición integrados",
+      "Meta, TikTok y Google Ads con optimización semanal",
+      "Planificación, copies y calendario mensual + UGC",
+    ],
   },
   {
-    label: "Cobertura",
-    values: ["Web + paid + IA básica", "Full funnel + growth ops", "Transformación digital completa"],
+    label: "Entrega típica",
+    values: ["Proyecto cerrado en 4–6 semanas", "Gestión mensual con reporting continuo", "Calendario mensual con ajustes quincenales"],
   },
   {
-    label: "Inversión medios",
-    values: ["Hasta 1.5k €/mes", "Hasta 6k €/mes", "A definir"],
+    label: "Precio base",
+    values: ["1.500 – 3.000 €", "500 €/mes + inversión", "200 €/mes"],
   },
 ];
 
@@ -126,28 +122,25 @@ const process = [
 
 function PlanCard({ plan }: { plan: (typeof plans)[number] }) {
   return (
-    <article className="group flex flex-col gap-6 rounded-[28px] border border-black/5 bg-white/90 p-8 shadow-[0_35px_60px_-35px_rgba(15,23,42,0.38)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_45px_85px_-45px_rgba(37,99,235,0.45)]">
-      <header className="space-y-3">
+    <article className="group flex flex-col gap-5 rounded-[24px] border border-black/5 bg-white/90 p-6 shadow-[0_30px_55px_-35px_rgba(15,23,42,0.36)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_40px_80px_-45px_rgba(37,99,235,0.4)]">
+      <header className="space-y-2.5">
         <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs uppercase tracking-[0.35em] text-blue-500">{plan.badge}</p>
-            <h3 className="text-2xl font-semibold text-slate-900">{plan.title}</h3>
-          </div>
-          <span className="rounded-full bg-blue-50 px-4 py-1 text-xs font-semibold text-blue-600">
-            {plan.duration}
+          <p className="text-[10px] uppercase tracking-[0.3em] text-slate-500">{plan.category}</p>
+          <span className="rounded-full bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-600">
+            {plan.badge}
           </span>
         </div>
-        <p className="text-3xl font-semibold text-slate-900">{plan.price}</p>
+        <h3 className="text-xl font-semibold text-slate-900">{plan.product}</h3>
+        <p className="text-2xl font-semibold text-slate-900">{plan.price}</p>
         <p className="text-sm text-slate-600">{plan.description}</p>
       </header>
 
       <section className="space-y-4">
         <ListBlock title="Incluye" items={plan.includes} />
-        <ListBlock title="Automatización & IA" items={plan.automation} />
-        <ListBlock title="Resultados esperados" items={plan.results} />
+        {plan.note ? <p className="text-xs text-slate-500">{plan.note}</p> : null}
       </section>
 
-      <footer className="flex flex-col gap-3 border-t border-slate-200 pt-6">
+      <footer className="flex flex-col gap-3 border-t border-slate-200 pt-4">
         <Link
           href={plan.ctaLink}
           target={plan.ctaLink.startsWith("http") ? "_blank" : undefined}
@@ -156,20 +149,31 @@ function PlanCard({ plan }: { plan: (typeof plans)[number] }) {
           {plan.ctaLabel}
           <ArrowUpRight className="h-4 w-4" />
         </Link>
-        <p className="text-xs text-slate-400">
-          Incluye reuniones semanales, canal compartido y reporting en tiempo real.
-        </p>
       </footer>
     </article>
   );
 }
 
 function ListBlock({ title, items }: { title: string; items: string[] }) {
+  const [expanded, setExpanded] = useState(false);
+  const visibleItems = expanded ? items : items.slice(0, 4);
+
   return (
-    <div className="space-y-3 rounded-2xl border border-slate-200/60 bg-white/70 p-4">
-      <p className="text-sm font-semibold text-slate-800">{title}</p>
+    <div className="space-y-3 rounded-2xl border border-slate-200/70 bg-white/80 p-4">
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-semibold text-slate-800">{title}</p>
+        {items.length > 4 ? (
+          <button
+            type="button"
+            onClick={() => setExpanded((prev) => !prev)}
+            className="text-xs font-semibold text-blue-600 underline-offset-4 hover:underline"
+          >
+            {expanded ? "Ver menos" : `+${items.length - 4} más`}
+          </button>
+        ) : null}
+      </div>
       <div className="space-y-2">
-        {items.map((item) => (
+        {visibleItems.map((item) => (
           <div key={item} className="flex items-start gap-2 text-sm text-slate-600">
             <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-500" />
             <span>{item}</span>
@@ -185,18 +189,18 @@ export default function Page() {
     <div className="overflow-clip bg-[#fafafa] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
       <FloatingNav navItems={navItems} />
 
-      <section className="mx-6 mt-20 flex flex-col gap-6 rounded-[48px] border border-black/5 bg-white/70 p-10 text-center shadow-[0_35px_70px_-40px_rgba(15,23,42,0.4)] backdrop-blur md:mx-auto md:w-4/5">
-        <p className="text-xs uppercase tracking-[0.35em] text-blue-500">Planes y servicios</p>
-        <h1 className="text-3xl font-semibold text-slate-900 md:text-5xl">
-          Marketing, automatización e IA adaptados a tu etapa de crecimiento
+      <section className="mx-6 mt-12 flex flex-col gap-4 rounded-[36px] border border-black/5 bg-white/75 p-8 text-center shadow-[0_30px_60px_-40px_rgba(15,23,42,0.38)] backdrop-blur md:mx-auto md:max-w-6xl">
+        <p className="text-[11px] uppercase tracking-[0.35em] text-blue-500">Planes y servicios</p>
+        <h1 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+          Web, paid media y redes sin scroll infinito
         </h1>
-        <p className="mx-auto max-w-3xl text-lg text-slate-600">
-          Diseñamos equipos híbridos y sprints con entregables medibles. Cada plan incluye estrategia, ejecución, automatización y reporting para que el crecimiento no dependa de improvisaciones.
+        <p className="mx-auto max-w-3xl text-base text-slate-600">
+          Todo lo esencial en una sola vista. Elige el plan que mejor encaja y abre detalles solo cuando lo necesites.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
-          <span className="rounded-full border border-slate-200 px-4 py-2">Kick-off en menos de 10 días</span>
-          <span className="rounded-full border border-slate-200 px-4 py-2">Contratos flexibles desde 3 meses</span>
-          <span className="rounded-full border border-slate-200 px-4 py-2">Workshops de descubrimiento incluidos</span>
+        <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] text-slate-500">
+          <span className="rounded-full border border-slate-200 px-3 py-1.5">Kick-off rápido</span>
+          <span className="rounded-full border border-slate-200 px-3 py-1.5">Precios base claros</span>
+          <span className="rounded-full border border-slate-200 px-3 py-1.5">Entregables accionables</span>
         </div>
         <Link
           href="/meeting"
@@ -207,101 +211,60 @@ export default function Page() {
         </Link>
       </section>
 
-      <section className="mx-6 my-16 grid gap-8 md:mx-auto md:w-4/5 xl:grid-cols-3">
+      <section className="mx-6 my-10 grid gap-6 md:mx-auto md:max-w-6xl md:grid-cols-3">
         {plans.map((plan) => (
           <PlanCard key={plan.id} plan={plan} />
         ))}
       </section>
 
-      <section className="mx-6 mb-16 rounded-[40px] border border-slate-200/70 bg-white/80 p-8 shadow-[0_30px_60px_-45px_rgba(15,23,42,0.3)] md:mx-auto md:w-4/5">
-        <h2 className="text-xl font-semibold text-slate-900">Comparativa en un vistazo</h2>
-        <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200/70">
-          <table className="w-full divide-y divide-slate-200 text-sm">
-            <thead className="bg-slate-50/80 text-slate-500">
-              <tr>
-                <th className="px-4 py-3 text-left font-semibold">Aspecto</th>
-                {plans.map((plan) => (
-                  <th key={plan.id} className="px-4 py-3 text-left font-semibold text-slate-700">
-                    {plan.title}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="bg-white/80 text-slate-600">
-              {comparison.map((row) => (
-                <tr key={row.label} className="divide-x divide-slate-200/60">
-                  <td className="px-4 py-3 font-medium text-slate-700">{row.label}</td>
-                  {row.values.map((value, index) => (
-                    <td key={index} className="px-4 py-3">
-                      {value}
-                    </td>
+      <section className="mx-6 mb-12 space-y-3 md:mx-auto md:max-w-5xl">
+        <details className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 shadow-[0_20px_40px_-35px_rgba(15,23,42,0.35)]">
+          <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-semibold text-slate-800">
+            Comparativa rápida
+            <span className="text-xs text-slate-500">Opcional</span>
+          </summary>
+          <div className="overflow-x-auto border-t border-slate-100">
+            <table className="w-full min-w-[720px] divide-y divide-slate-200 text-sm">
+              <thead className="bg-slate-50/80 text-slate-500">
+                <tr>
+                  <th className="px-4 py-3 text-left font-semibold">Aspecto</th>
+                  {plans.map((plan) => (
+                    <th key={plan.id} className="px-4 py-3 text-left font-semibold text-slate-700">
+                      {plan.product}
+                    </th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section className="mx-6 mb-20 flex flex-col gap-8 rounded-[40px] border border-black/5 bg-white/80 p-10 shadow-[0_30px_60px_-40px_rgba(15,23,42,0.32)] md:mx-auto md:w-4/5">
-        <div className="space-y-3 text-center md:text-left">
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-400">Cómo trabajamos</p>
-          <h2 className="text-2xl font-semibold text-slate-900">Sprints claros, sin sorpresas</h2>
-          <p className="text-sm text-slate-600">
-            Cada engagement arranca con un diagnóstico detallado y continúa con ciclos de trabajo de cuatro semanas. Documentamos todo, compartimos tableros y medimos resultados en tiempo real.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {process.map((step) => (
-            <div key={step.title} className="space-y-3 rounded-2xl border border-slate-200/70 bg-white/70 p-5">
-              <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
-              <p className="text-sm text-slate-600">{step.copy}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-6 mb-20 rounded-[36px] border border-emerald-200/70 bg-emerald-50/70 p-8 shadow-[0_30px_60px_-40px_rgba(16,185,129,0.35)] md:mx-auto md:w-4/5">
-        <div className="flex flex-col gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
-          <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-emerald-500">Garantía Bird</p>
-            <h3 className="text-2xl font-semibold text-emerald-900">Resultados garantizados o te devolvemos tu inversión del primer sprint.</h3>
-            <p className="text-sm text-emerald-800/80">
-              Si tras el sprint inicial no logramos los entregables y KPIs acordados, reembolsamos el fee del servicio o continuamos sin coste hasta alcanzarlos. Transparencia y riesgo compartido desde el día uno.
-            </p>
+              </thead>
+              <tbody className="bg-white/80 text-slate-600">
+                {comparison.map((row) => (
+                  <tr key={row.label} className="divide-x divide-slate-200/60">
+                    <td className="px-4 py-3 font-medium text-slate-700">{row.label}</td>
+                    {row.values.map((value, index) => (
+                      <td key={index} className="px-4 py-3">
+                        {value}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <Link
-            href="/meeting"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-600 bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-emerald-500"
-          >
-            Revisar condiciones
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
+        </details>
 
-      <section className="mx-6 mb-24 flex flex-col gap-6 rounded-[40px] border border-black/5 bg-white p-10 text-center shadow-[0_35px_60px_-40px_rgba(15,23,42,0.4)] md:mx-auto md:w-4/5">
-        <h2 className="text-3xl font-semibold text-slate-900">¿Listo para tu próximo sprint con Bird?</h2>
-        <p className="mx-auto max-w-2xl text-base text-slate-600">
-          Agenda una sesión estratégica sin compromiso. Revisamos tu funnel actual, priorizamos quick wins y definimos una hoja de ruta con inversiones estimadas y recursos necesarios.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <Link
-            href="/meeting"
-            className="inline-flex items-center gap-2 rounded-xl border border-black bg-black px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-600"
-          >
-            Ir a la agenda
-            <CalendarIcon className="h-4 w-4" />
-          </Link>
-          <Link
-            href="https://wa.me/673685542"
-            target="_blank"
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-blue-400 hover:text-blue-600"
-          >
-            Hablar por WhatsApp
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
+        <details className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 shadow-[0_20px_40px_-35px_rgba(15,23,42,0.35)]">
+          <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-semibold text-slate-800">
+            Cómo trabajamos
+            <span className="text-xs text-slate-500">Pasos en 20 segundos</span>
+          </summary>
+          <div className="grid gap-4 border-t border-slate-100 p-4 md:grid-cols-3">
+            {process.map((step) => (
+              <div key={step.title} className="space-y-2 rounded-xl border border-slate-200/70 bg-white/70 p-4">
+                <h3 className="text-sm font-semibold text-slate-900">{step.title}</h3>
+                <p className="text-xs text-slate-600">{step.copy}</p>
+              </div>
+            ))}
+          </div>
+        </details>
       </section>
     </div>
   );
